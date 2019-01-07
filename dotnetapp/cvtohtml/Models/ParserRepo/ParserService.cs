@@ -21,7 +21,7 @@ namespace cvtohtml.Models {
             if (!outputDirInfo.Exists)
                 outputDirInfo.Create();
 
-            byte[] byteArray = File.ReadAllBytes(fileLocaiton);
+            byte[] byteArray = File.ReadAllBytes(fileLocation);
 
             using (var memoryStream = new MemoryStream()) {
                 memoryStream.Write(byteArray, 0, byteArray.Length);
