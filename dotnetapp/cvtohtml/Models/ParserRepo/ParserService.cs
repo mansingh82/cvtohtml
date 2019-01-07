@@ -8,10 +8,10 @@ using System.Drawing.Imaging;
 namespace cvtohtml.Models {
     public class ParseService: IParseService
     {
-        public bool parse(string fileLocaiton) {
+        public bool parse(string fileLocation) {
 
-            var fileName = Path.GetFileName(fileLocaiton);
-            var fileExtension = Path.GetExtension(fileLocaiton);
+            var fileName = Path.GetFileName(fileLocation);
+            var fileExtension = Path.GetExtension(fileLocation);
             if (!(fileExtension == ".doc" || fileExtension == ".docx")) return false;
 
             var fileNameWithHTMLExtension = fileName.Replace(fileExtension, ".html");
