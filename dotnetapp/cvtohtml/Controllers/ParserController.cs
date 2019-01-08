@@ -20,7 +20,6 @@ namespace cvtohtml.Controllers
 
         [HttpGet("[action]")]
         public IActionResult Parse([FromQuery] string fileLocation) {
-            System.Console.Write(fileLocation);
             var result = _parseService.parse(fileLocation);
             return Ok(result);
         }
