@@ -1,3 +1,18 @@
-<p>
-  parsing works {{parsed}}
-</p>
+<form>
+  <div class="input-group mb-3 mt-3">
+    <div class="input-group-addon">
+      <span class="input-group-text" id="basic-addon3">Input file location (including extension):</span>
+    </div>
+    <input type="text" name="fileInput" class="form-control" id="basic-url"
+           [(ngModel)]="fileLocation"
+           (ngModelChange)="onInputChange()"
+           aria-describedby="basic-addon3">
+  </div>
+  <button type="submit" (click)="saveAsHTML()" class="btn btn-primary mt-3">Save to HTML</button>
+  <div class="alert alert-danger" role="alert" *ngIf="!taskStatus">
+    {{statusMessage}}
+  </div>
+  <div class="alert alert-success" role="alert" *ngIf="taskStatus && statusMessage !== ''">
+    {{statusMessage}}
+  </div>
+</form>
